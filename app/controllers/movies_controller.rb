@@ -27,7 +27,13 @@ class MoviesController < ApplicationController
       session[:ratings] = @selected_ratings
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
-    @movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
+    # luga code
+    #if @selected_ratings.size == 0
+    #  @movies = Movie.find_all_by_rating(@all_ratings, ordering)
+    #else
+    # luga code
+      @movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
+#    end
   end
 
   def new
