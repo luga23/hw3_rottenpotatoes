@@ -65,3 +65,8 @@ end
 #    assert !page.body.index(e1).nil?, "#{e1} should be visible"
 #  end
 #end
+
+Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |arg1, arg2|
+  Movie.find_by_title(arg1).director.should == arg2
+end
+

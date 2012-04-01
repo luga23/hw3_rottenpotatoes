@@ -4,6 +4,9 @@
 
 = form_tag movie_path(@movie), :method => :put do
 
+  = label :movie, :director, 'Director'
+  = text_field :movie, 'director'
+
   = label :movie, :title, 'Title'
   = text_field :movie, 'title'
 

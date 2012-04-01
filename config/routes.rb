@@ -13,6 +13,10 @@ Rottenpotatoes::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :movies
+  # match 'movies-directed-by(/:director(.:format))' => 'movies#list_by_director', :as => :movies_by_director, :via => :get # :as => :movies_by_director allows you to use movies_by_director_url but I should prefer movies_by_director_path
+#  match 'movies-directed-by(/:id(.:format))' => 'movies#list_by_director', :as => :movies_by_director, :via => :get # :as => :movies_by_director allows you to use movies_by_director_url but I should prefer movies_by_director_path
+
+  match 'movies-directed-by/:id' => 'movies#list_by_director', :as => :movies_by_director, :via => :get # :as => :movies_by_director allows you to use movies_by_director_url but I should prefer movies_by_director_path
 
   # Sample resource route with options:
   #   resources :products do
